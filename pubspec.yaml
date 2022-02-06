@@ -37,6 +37,9 @@ dependencies:
   search_choices:
   font_awesome_flutter: ^9.2.0
   percent_indicator: ^3.4.0
+  sizer: ^2.0.15
+  country_pickers: ^2.0.0
+  country_code_picker: ^2.0.2
 
 dev_dependencies:
   flutter_test:

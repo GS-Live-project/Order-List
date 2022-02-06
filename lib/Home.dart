@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, library_prefixes
 
 import 'package:flutter/material.dart';
+import 'package:gs_live/registrationScreens/verifyNumber.dart';
 import 'SearchScreen/SearchScreen.dart';
 import 'ContactUs.dart';
 import 'orderView.dart';
 import 'orderViewDetailed.dart';
 import 'calculator.dart';
+import 'registrationScreens/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -68,6 +70,24 @@ class _HomeState extends State<Home> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const Calculator()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Login page'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Change number'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VerifyNumber()),
                 );
               },
             )
