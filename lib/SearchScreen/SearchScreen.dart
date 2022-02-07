@@ -44,10 +44,23 @@ class _SearchScreenState extends State<SearchScreen> {
     super.initState();
   }
 
-  void updateSuggestions(newval) {
+  void updateSuggestions(newval) async {
+    String url = constants.BASE +
+        (widget.type == 'supplier'
+            ? "/suppliers/search?name=" + newval
+            : "/items/search?name=" + newval);
+
+    final resp = await http.get(Uri.parse(url));
+    var jsonData = json.decode(resp.body);
+
+    List<String> dataListFromBackend = [];
+    for (var listItem in jsonData) {
+      dataListFromBackend.add(
+        listItem['name'] ?? "none",
+      );
+    }
     setState(() {
-      // this returns empty arr for some reason.
-      // _listItems = _listItems.where((item) => item.contains(newval)).toList();
+      _listItems = dataListFromBackend;
     });
   }
 
@@ -68,9 +81,9 @@ class _SearchScreenState extends State<SearchScreen> {
               width: 1000,
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                  // onChanged: (value) {
-                  //   updateSuggestions(value);
-                  // },
+                  onChanged: (value) {
+                    updateSuggestions(value);
+                  },
                   style: const TextStyle(
                     fontSize: 15.0,
                     color: Colors.black,

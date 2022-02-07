@@ -8,6 +8,7 @@ import 'orderView.dart';
 import 'orderViewDetailed.dart';
 import 'calculator.dart';
 import 'registrationScreens/login.dart';
+import 'summary.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -88,6 +89,15 @@ class _HomeState extends State<Home> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => VerifyNumber()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Order summary'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Summary()),
                 );
               },
             )
