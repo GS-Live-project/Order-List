@@ -1,8 +1,12 @@
-import 'package:gs_live/registrationScreens/location.dart';
-import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:gs_live/profile.dart';
+import 'package:sizer/sizer.dart';
 
-class BusinessDetails extends StatelessWidget {
+// void main(List<String> args) {}
+
+class Location extends StatelessWidget {
+  const Location({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
@@ -21,7 +25,6 @@ class BusinessDetails extends StatelessWidget {
                 child: Row(
                   children: [
                     Spacer(),
-
                     Flexible(
                       flex: 9,
                       child: Container(
@@ -31,9 +34,6 @@ class BusinessDetails extends StatelessWidget {
                             Flexible(
                               child: Column(
                                 children: [
-                                  // Spacer(
-                                  //   flex: 2,
-                                  // ),
                                   Flexible(
                                       flex: 3,
                                       child: Container(
@@ -41,11 +41,9 @@ class BusinessDetails extends StatelessWidget {
                                       )),
                                   Flexible(
                                     flex: 5,
-                                    //color: Colors.yellow,
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
-                                      //color: Colors.yellow,
                                       children: [
                                         Flexible(
                                             child: RichText(
@@ -66,33 +64,7 @@ class BusinessDetails extends StatelessWidget {
                                               ),
                                             ],
                                           ),
-                                        )
-                                            // child: Column(
-                                            //   crossAxisAlignment:
-                                            //       CrossAxisAlignment.stretch,
-                                            //   mainAxisAlignment:
-                                            //       MainAxisAlignment.end,
-                                            //   children: [
-                                            //     Text(
-                                            //       'Welcome',
-                                            //       style: TextStyle(
-                                            //         color: Colors.white,
-                                            //         fontSize: 23,
-                                            //       ),
-                                            //     ),
-                                            //     Text(
-                                            //       'Login to ListApp',
-                                            //       style: TextStyle(
-                                            //         color: Colors.white,
-                                            //         fontWeight: FontWeight.bold,
-                                            //         fontSize: 23,
-                                            //       ),
-                                            //     ),
-                                            //   ],
-                                            // ),
-                                            ),
-                                        // Spacer(),
-                                        // Spacer(),
+                                        )),
                                         Image(
                                             image: AssetImage(
                                                 '../images/logo.png')),
@@ -100,10 +72,6 @@ class BusinessDetails extends StatelessWidget {
                                     ),
                                   ),
                                   Spacer(),
-                                  // Flexible(
-                                  //     child: Container(
-                                  //   color: Colors.purple,
-                                  // )),
                                 ],
                               ),
                             ),
@@ -111,11 +79,6 @@ class BusinessDetails extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // Flexible(
-                    //   child: Container(
-                    //     color: Colors.cyan,
-                    //   ),
-                    // ),
                     Spacer(),
                   ],
                 ),
@@ -140,11 +103,9 @@ class BusinessDetails extends StatelessWidget {
                       Flexible(child: Container(height: 6.h)),
                       Flexible(
                         child: Container(
-                          width: 1000.w, //It will take a 30% of screen height
-                          //color: Colors.blue,
-                          // padding: ,
+                          width: 1000.w,
                           child: Text(
-                            'Bussiness Details',
+                            'Location and Address',
                             style: TextStyle(
                               color: Color(0xff484848),
                               fontWeight: FontWeight.bold,
@@ -161,10 +122,9 @@ class BusinessDetails extends StatelessWidget {
                       ),
                       Container(
                         width: 1000.w,
-                        height: 4.h, //It will take a 30% of screen height
-                        //color: Colors.grey,
+                        height: 4.h,
                         child: Text(
-                          'Bussiness Name',
+                          'Location',
                           style: TextStyle(
                             color: Color(0xff484848),
                             fontWeight: FontWeight.bold,
@@ -175,11 +135,73 @@ class BusinessDetails extends StatelessWidget {
                       Container(
                         width: 1000.w,
                         height: 6.h,
-                        //color: Colors.blueGrey,
                         child: TextField(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'Enter Business Name'),
+                              hintText: 'Location'),
+                        ),
+                      ),
+                      Container(
+                        width: 1000.w,
+                        height: 3.h,
+                      ),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                                child: Column(
+                              children: [
+                                Container(
+                                  width: 38.w,
+                                  height: 4.h,
+                                  child: Text(
+                                    'City',
+                                    style: TextStyle(
+                                      color: Color(0xff484848),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 39.w,
+                                  height: 6.h,
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: 'Indore'),
+                                  ),
+                                ),
+                              ],
+                            )),
+                            Container(
+                                child: Column(
+                              children: [
+                                Container(
+                                  width: 38.w,
+                                  height: 4.h,
+                                  child: Text(
+                                    'State',
+                                    style: TextStyle(
+                                      color: Color(0xff484848),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 39.w,
+                                  height: 6.h,
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: 'M.P.'),
+                                  ),
+                                ),
+                              ],
+                            ))
+                          ],
                         ),
                       ),
                       Container(
@@ -189,9 +211,8 @@ class BusinessDetails extends StatelessWidget {
                       Container(
                         width: 1000.w,
                         height: 4.h,
-                        //color: Colors.yellow,
                         child: Text(
-                          'Your Name',
+                          'Address Line 1',
                           style: TextStyle(
                             color: Color(0xff484848),
                             fontWeight: FontWeight.bold,
@@ -200,12 +221,41 @@ class BusinessDetails extends StatelessWidget {
                         ),
                       ),
                       Container(
+                        width: 1000.w,
                         height: 6.h,
-                        width: 1000.0.w,
                         child: TextField(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: 'Enter Your Name'),
+                              hintText: 'Address Line 1'),
+                        ),
+                      ),
+                      Container(
+                        width: 1000.w,
+                        height: 4.h,
+                      ),
+                      Flexible(
+                        child: Container(
+                          width: 1000.w,
+                          height: 4.h,
+                          child: Text(
+                            'Address Line 2',
+                            style: TextStyle(
+                              color: Color(0xff484848),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Container(
+                          height: 6.h,
+                          width: 1000.0.w,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Address Line 2'),
+                          ),
                         ),
                       ),
                       Container(
@@ -232,7 +282,7 @@ class BusinessDetails extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const Location()),
+                                        builder: (context) => const profile()),
                                   );
                                 },
                               ),

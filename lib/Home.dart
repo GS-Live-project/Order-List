@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, library_prefixes
 
 import 'package:flutter/material.dart';
+import 'package:gs_live/profile.dart';
 import 'package:gs_live/registrationScreens/verifyNumber.dart';
 import 'SearchScreen/SearchScreen.dart';
 import 'ContactUs.dart';
@@ -100,7 +101,7 @@ class _HomeState extends State<Home> {
                   MaterialPageRoute(builder: (context) => const Summary()),
                 );
               },
-            )
+            ),
           ],
         ),
       ),

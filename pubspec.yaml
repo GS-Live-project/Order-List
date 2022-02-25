@@ -41,6 +41,7 @@ dependencies:
   country_pickers: ^2.0.0
   country_code_picker: ^2.0.2
   expansion_card:
+  dotted_border: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
